@@ -100,11 +100,7 @@ jobs:
             mkdir docs/"$version"
             # build new document
             cd /tmp/paimon
-            git checkout master
-            if [ "$version" != "master" ]
-            then
-              git checkout release-"$version"
-            fi
+            git checkout try-fix-website
             . ./docs.sh
             # copy document to target directory
             cp -r docs/target/* "$current_dir"/docs/"$version"
